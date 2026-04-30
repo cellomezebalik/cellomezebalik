@@ -26,7 +26,6 @@
             min-height: 100vh;
         }
 
-        /* Üst Logo Alanı */
         header {
             text-align: center;
             padding: 25px 20px;
@@ -42,7 +41,6 @@
             margin: 0 auto;
         }
 
-        /* Kategori Izgarası */
         .category-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -55,7 +53,6 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            text-decoration: none;
             border: 1px solid #eee;
             transition: transform 0.2s;
             cursor: pointer;
@@ -80,7 +77,6 @@
             text-transform: uppercase;
         }
 
-        /* Detay Paneli */
         .menu-overlay {
             display: none;
             position: fixed;
@@ -139,12 +135,12 @@
     <div class="category-grid">
         <!-- RAKI -->
         <div class="cat-card" onclick="openMenu('raki-cat', 'RAKI ÇEŞİTLERİ')">
-            <img src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Rakı">
+            <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Sarı Zeybek Rakı">
             <div class="cat-title">RAKI ÇEŞİTLERİ</div>
         </div>
         <!-- İÇECEKLER -->
         <div class="cat-card" onclick="openMenu('icecek-cat', 'İÇECEKLER')">
-            <img src="https://images.unsplash.com/photo-1544145945-f904253d0c7b?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="İçecekler">
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="İçecekler">
             <div class="cat-title">İÇECEKLER</div>
         </div>
         <!-- MEZELER -->
@@ -159,7 +155,7 @@
         </div>
         <!-- ARA SICAKLAR -->
         <div class="cat-card" onclick="openMenu('arasicak-cat', 'ARA SICAKLAR')">
-            <img src="https://images.unsplash.com/photo-1532347922424-c652d9b7208e?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Ara Sıcaklar">
+            <img src="https://images.unsplash.com/photo-1532347922424-c652d9b7208e?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Kalamar Karides">
             <div class="cat-title">ARA SICAKLAR</div>
         </div>
         <!-- ANA YEMEKLER -->
@@ -170,7 +166,6 @@
     </div>
 </div>
 
-<!-- DETAY GÖRÜNÜMÜ -->
 <div id="overlay" class="menu-overlay">
     <div class="overlay-header">
         <button class="back-btn" onclick="closeMenu()">← Geri</button>
