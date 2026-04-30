@@ -6,16 +6,16 @@
     <title>Cello Meze ★ Balık - Tahir'in Yeri Menü</title>
     <style>
         :root {
-            --bg-color: #f4f8fb; /* Çok açık mavi, taze his */
-            --main-blue: #0076a3; /* Logo ana mavisi */
-            --accent-gold: #c5a059; /* Logo altın sarısı */
+            --bg-color: #f4f8fb; 
+            --main-blue: #0076a3; 
+            --accent-gold: #c5a059; 
             --text-color: #333;
             --card-bg: #ffffff;
             --muted-text: #666;
         }
 
         body {
-            font-family: 'Georgia', serif; /* Meyhane klasiği font */
+            font-family: 'Georgia', serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
@@ -31,32 +31,18 @@
 
         header {
             text-align: center;
-            padding: 30px 10px;
-            background: radial-gradient(circle, #e0f2f1, #f4f8fb);
+            padding: 20px 10px;
+            background: #fff;
             border-bottom: 2px solid var(--accent-gold);
             margin-bottom: 20px;
         }
 
-        .logo-placeholder {
+        .logo-img {
             max-width: 250px;
-            margin: 0 auto 15px auto;
+            width: 100%;
+            height: auto;
             display: block;
-        }
-        /* LOGO RESMİNİ BURAYA EKLEYEBİLİRİZ */
-        /* background-image: url('logo.png'); gibi, ama şimdilik div olarak kalıyor */
-
-        header h1 {
-            margin: 0;
-            color: var(--main-blue);
-            font-size: 2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        header p {
-            color: var(--muted-text);
-            margin-top: 5px;
-            font-style: italic;
+            margin: 0 auto 10px auto;
         }
 
         .section {
@@ -69,59 +55,36 @@
 
         .section-header {
             background-color: var(--main-blue);
-            padding: 15px;
+            padding: 12px 15px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--accent-gold);
         }
 
         .section-title {
             color: #fff;
             margin: 0;
             text-transform: uppercase;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             letter-spacing: 1px;
         }
 
-        .section-icon {
-            color: var(--accent-gold);
-            font-size: 1.2rem;
-        }
-
-        .section-image {
-            width: 100%;
-            height: 150px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* GÖRSEL YER TUTUCULAR - TEMSİLİ RESİMLER */
-        #raki-image { background-image: url('https://images.unsplash.com/photo-1623910398687-320c2d385805?q=80&w=1000'); } /* Temsili Rakı/İçecek görseli */
-        #meze-image { background-image: url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1000'); } /* Temsili Meze görseli */
-        #balik-image { background-image: url('https://images.unsplash.com/photo-1616428236750-f925791789c0?q=80&w=1000'); } /* Temsili Balık görseli */
-
         .section-content {
-            padding: 15px 20px;
+            padding: 10px 20px;
         }
 
         /* Rakı Tablosu */
         .raki-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .raki-table th, .raki-table td {
-            padding: 10px;
+            padding: 8px 4px;
             text-align: center;
             border-bottom: 1px solid #eee;
-        }
-
-        .raki-table th {
-            color: var(--muted-text);
-            font-size: 0.8rem;
-            font-weight: normal;
+            font-size: 0.85rem;
         }
 
         .raki-brand {
@@ -144,90 +107,50 @@
             border-bottom: 1px dotted #e0e0e0;
         }
 
-        .item-details {
-            flex: 1;
-        }
-
         .item-name {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
 
         .item-fiyat {
             font-weight: bold;
             color: var(--accent-gold);
-            font-size: 1.1rem;
+            white-space: nowrap;
+            margin-left: 10px;
         }
-
-        .item-description {
-            font-size: 0.9rem;
-            color: var(--muted-text);
-            font-style: italic;
-        }
-
-        .item-with-thumbnail {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .item-thumbnail {
-            width: 50px;
-            height: 50px;
-            border-radius: 8px;
-            background-size: cover;
-            background-position: center;
-            flex-shrink: 0;
-        }
-        /* THUMBNAIL GÖRSELLERİ - TEMSİLİ */
-        #karides-thumb { background-image: url('https://images.unsplash.com/photo-1596766487815-5387431b327b?q=80&w=300'); }
-        #kalamar-thumb { background-image: url('https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=300'); }
 
         .note {
             background: rgba(197, 160, 89, 0.1);
             border: 1px dashed var(--accent-gold);
             padding: 15px;
             border-radius: 8px;
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 0.9rem;
-            font-style: italic;
             text-align: center;
-            color: var(--muted-text);
         }
 
         footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 30px 0;
             color: var(--muted-text);
             font-size: 0.8rem;
-            border-top: 1px solid var(--accent-gold);
-            margin-top: 20px;
         }
-
-        footer strong {
-            color: var(--main-blue);
-        }
-
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <div class="logo-placeholder">
-             <h1>Cello</h1>
-             <p>MEZE ★ BALIK</p>
-             <strong>Tahir'in Yeri</strong>
-        </div>
-        <p>Denizin Lezzeti, Muhabbetin Değeri</p>
+        <!-- Logo Buraya Geliyor -->
+        <img src="logo.png.jpg" alt="Cello Meze Balık Logo" class="logo-img">
+        <p style="margin:0; font-style:italic; color:var(--main-blue);">Tahir'in Yeri</p>
     </header>
 
+    <!-- ALKOLLER -->
     <div class="section">
         <div class="section-header">
             <h2 class="section-title">Rakı Çeşitleri</h2>
-            <span class="section-icon">❄️</span>
         </div>
-        <div id="raki-image" class="section-image"></div>
         <div class="section-content">
             <table class="raki-table">
                 <thead>
@@ -258,7 +181,7 @@
                         <td class="raki-price">3000</td>
                     </tr>
                     <tr>
-                        <td class="raki-brand">Beylerbeyi<br>Göbek</td>
+                        <td class="raki-brand">B.beyi Göbek</td>
                         <td class="raki-price">750</td>
                         <td class="raki-price">1500</td>
                         <td class="raki-price">1900</td>
@@ -270,29 +193,19 @@
         </div>
     </div>
 
+    <!-- İÇECEKLER -->
     <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">İçecekler</h2>
-            <span class="section-icon">🥤</span>
-        </div>
+        <div class="section-header"><h2 class="section-title">İçecekler</h2></div>
         <div class="section-content">
             <div class="menu-item"><span class="item-name">Bira</span><span class="item-fiyat">200 TL</span></div>
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Kola, Fanta, Sprite, Şalgam</span>
-                </div>
-                <span class="item-fiyat">75 TL</span>
-            </div>
+            <div class="menu-item"><span class="item-name">Kola, Fanta, Sprite, Şalgam</span><span class="item-fiyat">75 TL</span></div>
             <div class="menu-item"><span class="item-name">Redbull</span><span class="item-fiyat">150 TL</span></div>
         </div>
     </div>
 
+    <!-- MEZELER -->
     <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">Mezeler & Salatalar</h2>
-            <span class="section-icon">🥗</span>
-        </div>
-        <div id="meze-image" class="section-image"></div>
+        <div class="section-header"><h2 class="section-title">Mezeler & Salatalar</h2></div>
         <div class="section-content">
             <div class="menu-item"><span class="item-name">Meze Çeşitleri</span><span class="item-fiyat">200 TL</span></div>
             <div class="menu-item"><span class="item-name">Salata Çeşitleri</span><span class="item-fiyat">200 TL</span></div>
@@ -301,78 +214,26 @@
         </div>
     </div>
 
+    <!-- ARA SICAKLAR -->
     <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">Ara Sıcaklar</h2>
-            <span class="section-icon">🔥</span>
-        </div>
+        <div class="section-header"><h2 class="section-title">Ara Sıcaklar</h2></div>
         <div class="section-content">
-            <div class="menu-item item-with-thumbnail">
-                <div id="karides-thumb" class="item-thumbnail"></div>
-                <div class="item-details"><span class="item-name">Karides</span></div>
-                <span class="item-fiyat">600 TL</span>
-            </div>
-            <div class="menu-item item-with-thumbnail">
-                <div id="kalamar-thumb" class="item-thumbnail"></div>
-                <div class="item-details"><span class="item-name">Kalamar</span></div>
-                <span class="item-fiyat">600 TL</span>
-            </div>
+            <div class="menu-item"><span class="item-name">Karides</span><span class="item-fiyat">600 TL</span></div>
+            <div class="menu-item"><span class="item-name">Kalamar</span><span class="item-fiyat">600 TL</span></div>
             <div class="menu-item"><span class="item-name">Köri Patates</span><span class="item-fiyat">200 TL</span></div>
             <div class="menu-item"><span class="item-name">Güveçte Mantar</span><span class="item-fiyat">200 TL</span></div>
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Börek Çeşitleri</span>
-                    <p class="item-description">Paçanga veya Sigara Böreği</p>
-                </div>
-                <span class="item-fiyat">150 TL</span>
-            </div>
+            <div class="menu-item"><span class="item-name">Paçanga / Sigara Böreği</span><span class="item-fiyat">150 TL</span></div>
         </div>
     </div>
 
+    <!-- ANA YEMEKLER -->
     <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">Ana Yemekler</h2>
-            <span class="section-icon">🐟</span>
-        </div>
-        <div id="balik-image" class="section-image"></div>
+        <div class="section-header"><h2 class="section-title">Ana Yemekler</h2></div>
         <div class="section-content">
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Mezgit / Levrek / Çipura</span>
-                </div>
-                <span class="item-fiyat">600 TL</span>
-            </div>
+            <div class="menu-item"><span class="item-name">Mezgit / Levrek / Çipura</span><span class="item-fiyat">600 TL</span></div>
             <div class="menu-item"><span class="item-name">Sardalya</span><span class="item-fiyat">500 TL</span></div>
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Bonfile Saç Kavurma</span>
-                </div>
-                <span class="item-fiyat">700 TL</span>
-            </div>
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Lahos</span>
-                    <p class="item-description">Lütfen müsaitlik durumunu sorunuz.</p>
-                </div>
-                <span class="item-fiyat">Sorunuz</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">Meyve & Tatlı</h2>
-            <span class="section-icon">🍉</span>
-        </div>
-        <div class="section-content">
-            <div class="menu-item"><span class="item-name">Meyve Tabağı</span><span class="item-fiyat">250 TL</span></div>
-            <div class="menu-item">
-                <div class="item-details">
-                    <span class="item-name">Tatlı Çeşitleri</span>
-                    <p class="item-description">Kabak veya İrmik Tatlısı</p>
-                </div>
-                <span class="item-fiyat">250 TL</span>
-            </div>
+            <div class="menu-item"><span class="item-name">Bonfile Saç Kavurma</span><span class="item-fiyat">700 TL</span></div>
+            <div class="menu-item"><span class="item-name">Lahos</span><span class="item-fiyat">Müsaitlik Sorunuz</span></div>
         </div>
     </div>
 
@@ -381,7 +242,7 @@
     </div>
 
     <footer>
-        ©️ 2024 - <strong>Cello Meze ★ Balık</strong> / Tahir'in Yeri <br> Afiyet Olsun
+        ©️ 2026 Cello Meze ★ Balık - Afiyet Olsun
     </footer>
 </div>
 
