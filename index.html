@@ -29,25 +29,20 @@
         /* Üst Logo Alanı */
         header {
             text-align: center;
-            padding: 20px;
+            padding: 25px 20px;
             border-bottom: 3px solid var(--gold);
             background: white;
         }
 
         .logo-img {
-            max-width: 180px;
-            width: 70%;
+            max-width: 220px;
+            width: 80%;
             height: auto;
+            display: block;
+            margin: 0 auto;
         }
 
-        .welcome-text {
-            color: var(--dark-blue);
-            font-weight: bold;
-            margin-top: 10px;
-            letter-spacing: 1px;
-        }
-
-        /* Kategori Izgarası (Kare Butonlar) */
+        /* Kategori Izgarası */
         .category-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -63,6 +58,7 @@
             text-decoration: none;
             border: 1px solid #eee;
             transition: transform 0.2s;
+            cursor: pointer;
         }
 
         .cat-card:active {
@@ -71,20 +67,20 @@
 
         .cat-img {
             width: 100%;
-            height: 100px;
+            height: 110px;
             object-fit: cover;
         }
 
         .cat-title {
-            padding: 10px;
+            padding: 12px;
             text-align: center;
             font-weight: bold;
             color: var(--dark-blue);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             text-transform: uppercase;
         }
 
-        /* Ürün Listesi Alanı (Başlangıçta Gizli) */
+        /* Detay Paneli */
         .menu-overlay {
             display: none;
             position: fixed;
@@ -100,16 +96,18 @@
             color: white;
             display: flex;
             align-items: center;
+            position: sticky;
+            top: 0;
         }
 
         .back-btn {
             background: none;
             border: 1px solid white;
             color: white;
-            padding: 5px 15px;
+            padding: 6px 12px;
             border-radius: 5px;
             margin-right: 15px;
-            cursor: pointer;
+            font-weight: bold;
         }
 
         .product-list {
@@ -127,47 +125,46 @@
         .item-price { font-weight: bold; color: var(--gold); }
 
         .raki-table { width: 100%; border-collapse: collapse; font-size: 0.8rem; margin-top: 10px;}
-        .raki-table th, .raki-table td { padding: 8px 2px; text-align: center; border-bottom: 1px solid #eee; }
-        .raki-brand { text-align: left !important; font-weight: bold; }
+        .raki-table th, .raki-table td { padding: 10px 2px; text-align: center; border-bottom: 1px solid #eee; }
+        .raki-brand { text-align: left !important; font-weight: bold; color: var(--dark-blue); }
     </style>
 </head>
 <body>
 
-<div class="container" id="main-view">
+<div class="container">
     <header>
         <img src="logo.JPG" alt="Cello Logo" class="logo-img">
-        <div class="welcome-text">TAHİR'İN YERİ</div>
     </header>
 
     <div class="category-grid">
         <!-- RAKI -->
         <div class="cat-card" onclick="openMenu('raki-cat', 'RAKI ÇEŞİTLERİ')">
-            <img src="https://images.unsplash.com/photo-1610631653554-e0b407a9b09a?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Rakı">
             <div class="cat-title">RAKI ÇEŞİTLERİ</div>
         </div>
         <!-- İÇECEKLER -->
         <div class="cat-card" onclick="openMenu('icecek-cat', 'İÇECEKLER')">
-            <img src="https://images.unsplash.com/photo-1622483767028-3f66f32aef97?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1544145945-f904253d0c7b?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="İçecekler">
             <div class="cat-title">İÇECEKLER</div>
         </div>
         <!-- MEZELER -->
         <div class="cat-card" onclick="openMenu('meze-cat', 'MEZELER')">
-            <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Mezeler">
             <div class="cat-title">MEZELER</div>
         </div>
         <!-- SALATALAR -->
         <div class="cat-card" onclick="openMenu('salata-cat', 'SALATALAR')">
-            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Salatalar">
             <div class="cat-title">SALATALAR</div>
         </div>
         <!-- ARA SICAKLAR -->
         <div class="cat-card" onclick="openMenu('arasicak-cat', 'ARA SICAKLAR')">
-            <img src="https://images.unsplash.com/photo-159930773417d-94d30607c397?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1532347922424-c652d9b7208e?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Ara Sıcaklar">
             <div class="cat-title">ARA SICAKLAR</div>
         </div>
         <!-- ANA YEMEKLER -->
         <div class="cat-card" onclick="openMenu('anayemek-cat', 'ANA YEMEKLER')">
-            <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?auto=format&fit=crop&w=300&q=80" class="cat-img">
+            <img src="https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?q=80&w=400&auto=format&fit=crop" class="cat-img" alt="Balık">
             <div class="cat-title">ANA YEMEKLER</div>
         </div>
     </div>
@@ -179,9 +176,7 @@
         <button class="back-btn" onclick="closeMenu()">← Geri</button>
         <h3 id="overlay-title" style="margin:0"></h3>
     </div>
-    <div id="overlay-content" class="product-list">
-        <!-- İçerik buraya JS ile gelecek -->
-    </div>
+    <div id="overlay-content" class="product-list"></div>
 </div>
 
 <script>
@@ -191,33 +186,35 @@
                 <tr><th>Marka</th><th>20cc</th><th>35cc</th><th>50cc</th><th>70cc</th><th>100cc</th></tr>
                 <tr><td class="raki-brand">Efe Gold</td><td>650</td><td>1200</td><td>1500</td><td>2000</td><td>2500</td></tr>
                 <tr><td class="raki-brand">Sarı Zeybek</td><td>750</td><td>1300</td><td>1750</td><td>2250</td><td>3000</td></tr>
-                <tr><td class="raki-brand">B.beyi Göbek</td><td>750</td><td>1500</td><td>1900</td><td>2400</td><td>3200</td></tr>
+                <tr><td class="raki-brand">Beylerbeyi Göbek</td><td>750</td><td>1500</td><td>1900</td><td>2400</td><td>3200</td></tr>
             </table>`,
         'icecek-cat': `
             <div class="item"><span>Bira</span><span class="item-price">200 TL</span></div>
-            <div class="item"><span>Meşrubatlar</span><span class="item-price">75 TL</span></div>
+            <div class="item"><span>Kola, Fanta, Sprite, Şalgam</span><span class="item-price">75 TL</span></div>
             <div class="item"><span>Redbull</span><span class="item-price">150 TL</span></div>`,
         'meze-cat': `
-            <div class="item"><span>Meze Tabağı</span><span class="item-price">200 TL</span></div>
+            <div class="item"><span>Meze Çeşitleri</span><span class="item-price">200 TL</span></div>
             <div class="item"><span>Deniz Ürünleri Mezesi</span><span class="item-price">450 TL</span></div>
-            <div class="item"><span>Ezine Peynir</span><span class="item-price">100 TL</span></div>`,
+            <div class="item"><span>Ezine Peynir (Adet)</span><span class="item-price">100 TL</span></div>`,
         'salata-cat': `
             <div class="item"><span>Mevsim Salata</span><span class="item-price">200 TL</span></div>
             <div class="item"><span>Çoban Salata</span><span class="item-price">200 TL</span></div>`,
         'arasicak-cat': `
-            <div class="item"><span>Karides Güveç</span><span class="item-price">600 TL</span></div>
-            <div class="item"><span>Kalamar Tava</span><span class="item-price">600 TL</span></div>
-            <div class="item"><span>Paçanga Böreği</span><span class="item-price">150 TL</span></div>`,
+            <div class="item"><span>Karides</span><span class="item-price">600 TL</span></div>
+            <div class="item"><span>Kalamar</span><span class="item-price">600 TL</span></div>
+            <div class="item"><span>Köri Patates</span><span class="item-price">200 TL</span></div>
+            <div class="item"><span>Paçanga / Sigara Böreği</span><span class="item-price">150 TL</span></div>`,
         'anayemek-cat': `
-            <div class="item"><span>Levrek Izgara</span><span class="item-price">600 TL</span></div>
-            <div class="item"><span>Bonfile Kavurma</span><span class="item-price">700 TL</span></div>
-            <div class="item"><span>Çipura</span><span class="item-price">600 TL</span></div>`
+            <div class="item"><span>Mezgit / Levrek / Çipura</span><span class="item-price">600 TL</span></div>
+            <div class="item"><span>Sardalya</span><span class="item-price">500 TL</span></div>
+            <div class="item"><span>Bonfile Saç Kavurma</span><span class="item-price">700 TL</span></div>`
     };
 
     function openMenu(id, title) {
         document.getElementById('overlay-title').innerText = title;
         document.getElementById('overlay-content').innerHTML = menus[id];
         document.getElementById('overlay').style.display = 'block';
+        window.scrollTo(0,0);
         document.body.style.overflow = 'hidden';
     }
 
