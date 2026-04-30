@@ -6,39 +6,41 @@
     <title>Cello Meze ★ Balık - Tahir'in Yeri Menü</title>
     <style>
         :root {
-            --bg-color: #f4f8fb; 
-            --main-blue: #0076a3; 
-            --accent-gold: #c5a059; 
-            --text-color: #333;
+            --bg-color: #f0f4f8; 
+            --main-blue: #0056b3; 
+            --accent-gold: #b8860b; 
+            --text-color: #2c3e50;
             --card-bg: #ffffff;
-            --muted-text: #666;
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Times New Roman', Times, serif;
             background-color: var(--bg-color);
             color: var(--text-color);
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.5;
         }
 
         .container {
-            max-width: 600px;
+            max-width: 500px;
             margin: 0 auto;
-            padding: 10px;
+            padding: 15px;
         }
 
         header {
             text-align: center;
-            padding: 20px 10px;
+            padding: 25px 10px;
             background: #fff;
-            border-bottom: 2px solid var(--accent-gold);
+            border-bottom: 3px solid var(--accent-gold);
             margin-bottom: 20px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
+        /* LOGO KONTROLÜ */
         .logo-img {
-            max-width: 250px;
+            max-width: 220px;
             width: 100%;
             height: auto;
             display: block;
@@ -47,50 +49,48 @@
 
         .section {
             background: var(--card-bg);
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
             overflow: hidden;
+            border: 1px solid #e1e8ed;
         }
 
         .section-header {
             background-color: var(--main-blue);
-            padding: 12px 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px 15px;
+            text-align: center;
         }
 
         .section-title {
             color: #fff;
             margin: 0;
             text-transform: uppercase;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            letter-spacing: 2px;
         }
 
         .section-content {
-            padding: 10px 20px;
+            padding: 10px 15px;
         }
 
-        /* Rakı Tablosu */
         .raki-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 10px;
         }
 
         .raki-table th, .raki-table td {
-            padding: 8px 4px;
+            padding: 8px 2px;
             text-align: center;
-            border-bottom: 1px solid #eee;
-            font-size: 0.85rem;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 0.8rem;
         }
 
         .raki-brand {
             text-align: left !important;
             font-weight: bold;
             color: var(--main-blue);
+            font-size: 0.85rem;
         }
 
         .raki-price {
@@ -98,42 +98,40 @@
             color: var(--accent-gold);
         }
 
-        /* Liste Yapısı */
         .menu-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 0;
-            border-bottom: 1px dotted #e0e0e0;
+            padding: 10px 0;
+            border-bottom: 1px dotted #cbd5e0;
         }
 
         .item-name {
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .item-fiyat {
             font-weight: bold;
             color: var(--accent-gold);
-            white-space: nowrap;
-            margin-left: 10px;
         }
 
         .note {
-            background: rgba(197, 160, 89, 0.1);
-            border: 1px dashed var(--accent-gold);
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-size: 0.9rem;
+            background: #fffbe6;
+            border: 1px solid #ffe58f;
+            padding: 12px;
+            border-radius: 10px;
+            margin-top: 15px;
+            font-size: 0.85rem;
             text-align: center;
+            font-style: italic;
         }
 
         footer {
             text-align: center;
-            padding: 30px 0;
-            color: var(--muted-text);
-            font-size: 0.8rem;
+            padding: 25px 0;
+            color: #718096;
+            font-size: 0.75rem;
         }
     </style>
 </head>
@@ -141,16 +139,13 @@
 
 <div class="container">
     <header>
-        <!-- Logo Buraya Geliyor -->
+        <!-- Dosya ismini tırnak içinde kontrol et -->
         <img src="logo.png.jpg" alt="Cello Meze Balık Logo" class="logo-img">
-        <p style="margin:0; font-style:italic; color:var(--main-blue);">Tahir'in Yeri</p>
+        <p style="margin:0; font-weight: bold; color:var(--main-blue);">TAHİR'İN YERİ</p>
     </header>
 
-    <!-- ALKOLLER -->
     <div class="section">
-        <div class="section-header">
-            <h2 class="section-title">Rakı Çeşitleri</h2>
-        </div>
+        <div class="section-header"><h2 class="section-title">Rakı Çeşitleri</h2></div>
         <div class="section-content">
             <table class="raki-table">
                 <thead>
@@ -164,36 +159,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td class="raki-brand">Efe Gold</td>
-                        <td class="raki-price">650</td>
-                        <td class="raki-price">1200</td>
-                        <td class="raki-price">1500</td>
-                        <td class="raki-price">2000</td>
-                        <td class="raki-price">2500</td>
-                    </tr>
-                    <tr>
-                        <td class="raki-brand">Sarı Zeybek</td>
-                        <td class="raki-price">750</td>
-                        <td class="raki-price">1300</td>
-                        <td class="raki-price">1750</td>
-                        <td class="raki-price">2250</td>
-                        <td class="raki-price">3000</td>
-                    </tr>
-                    <tr>
-                        <td class="raki-brand">B.beyi Göbek</td>
-                        <td class="raki-price">750</td>
-                        <td class="raki-price">1500</td>
-                        <td class="raki-price">1900</td>
-                        <td class="raki-price">2400</td>
-                        <td class="raki-price">3200</td>
-                    </tr>
+                    <tr><td class="raki-brand">Efe Gold</td><td class="raki-price">650</td><td class="raki-price">1200</td><td class="raki-price">1500</td><td class="raki-price">2000</td><td class="raki-price">2500</td></tr>
+                    <tr><td class="raki-brand">Sarı Zeybek</td><td class="raki-price">750</td><td class="raki-price">1300</td><td class="raki-price">1750</td><td class="raki-price">2250</td><td class="raki-price">3000</td></tr>
+                    <tr><td class="raki-brand">B.beyi Göbek</td><td class="raki-price">750</td><td class="raki-price">1500</td><td class="raki-price">1900</td><td class="raki-price">2400</td><td class="raki-price">3200</td></tr>
                 </tbody>
             </table>
         </div>
     </div>
 
-    <!-- İÇECEKLER -->
     <div class="section">
         <div class="section-header"><h2 class="section-title">İçecekler</h2></div>
         <div class="section-content">
@@ -203,7 +176,6 @@
         </div>
     </div>
 
-    <!-- MEZELER -->
     <div class="section">
         <div class="section-header"><h2 class="section-title">Mezeler & Salatalar</h2></div>
         <div class="section-content">
@@ -214,7 +186,6 @@
         </div>
     </div>
 
-    <!-- ARA SICAKLAR -->
     <div class="section">
         <div class="section-header"><h2 class="section-title">Ara Sıcaklar</h2></div>
         <div class="section-content">
@@ -226,14 +197,13 @@
         </div>
     </div>
 
-    <!-- ANA YEMEKLER -->
     <div class="section">
         <div class="section-header"><h2 class="section-title">Ana Yemekler</h2></div>
         <div class="section-content">
             <div class="menu-item"><span class="item-name">Mezgit / Levrek / Çipura</span><span class="item-fiyat">600 TL</span></div>
             <div class="menu-item"><span class="item-name">Sardalya</span><span class="item-fiyat">500 TL</span></div>
             <div class="menu-item"><span class="item-name">Bonfile Saç Kavurma</span><span class="item-fiyat">700 TL</span></div>
-            <div class="menu-item"><span class="item-name">Lahos</span><span class="item-fiyat">Müsaitlik Sorunuz</span></div>
+            <div class="menu-item"><span class="item-name">Lahos</span><span class="item-fiyat">Sorunuz</span></div>
         </div>
     </div>
 
@@ -242,7 +212,7 @@
     </div>
 
     <footer>
-        ©️ 2026 Cello Meze ★ Balık - Afiyet Olsun
+        ©️ 2026 Cello Meze ★ Balık - Tahir'in Yeri
     </footer>
 </div>
 
