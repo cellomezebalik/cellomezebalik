@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cello Meze ★ Balık - Tahir'in Yeri Menü</title>
+    <style>
+        :root {
+            --bg-color: #f4f8fb; /* Çok açık mavi, taze his */
+            --main-blue: #0076a3; /* Logo ana mavisi */
+            --accent-gold: #c5a059; /* Logo altın sarısı */
+            --text-color: #333;
+            --card-bg: #ffffff;
+            --muted-text: #666;
+        }
+
+        body {
+            font-family: 'Georgia', serif; /* Meyhane klasiği font */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 10px;
+            background: radial-gradient(circle, #e0f2f1, #f4f8fb);
+            border-bottom: 2px solid var(--accent-gold);
+            margin-bottom: 20px;
+        }
+
+        .logo-placeholder {
+            max-width: 250px;
+            margin: 0 auto 15px auto;
+            display: block;
+        }
+        /* LOGO RESMİNİ BURAYA EKLEYEBİLİRİZ */
+        /* background-image: url('logo.png'); gibi, ama şimdilik div olarak kalıyor */
+
+        header h1 {
+            margin: 0;
+            color: var(--main-blue);
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header p {
+            color: var(--muted-text);
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: var(--main-blue);
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--accent-gold);
+        }
+
+        .section-title {
+            color: #fff;
+            margin: 0;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+
+        .section-icon {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* GÖRSEL YER TUTUCULAR - TEMSİLİ RESİMLER */
+        #raki-image { background-image: url('https://images.unsplash.com/photo-1623910398687-320c2d385805?q=80&w=1000'); } /* Temsili Rakı/İçecek görseli */
+        #meze-image { background-image: url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?q=80&w=1000'); } /* Temsili Meze görseli */
+        #balik-image { background-image: url('https://images.unsplash.com/photo-1616428236750-f925791789c0?q=80&w=1000'); } /* Temsili Balık görseli */
+
+        .section-content {
+            padding: 15px 20px;
+        }
+
+        /* Rakı Tablosu */
+        .raki-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+
+        .raki-table th, .raki-table td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .raki-table th {
+            color: var(--muted-text);
+            font-size: 0.8rem;
+            font-weight: normal;
+        }
+
+        .raki-brand {
+            text-align: left !important;
+            font-weight: bold;
+            color: var(--main-blue);
+        }
+
+        .raki-price {
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
+
+        /* Liste Yapısı */
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px dotted #e0e0e0;
+        }
+
+        .item-details {
+            flex: 1;
+        }
+
+        .item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .item-fiyat {
+            font-weight: bold;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .item-description {
+            font-size: 0.9rem;
+            color: var(--muted-text);
+            font-style: italic;
+        }
+
+        .item-with-thumbnail {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .item-thumbnail {
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+        /* THUMBNAIL GÖRSELLERİ - TEMSİLİ */
+        #karides-thumb { background-image: url('https://images.unsplash.com/photo-1596766487815-5387431b327b?q=80&w=300'); }
+        #kalamar-thumb { background-image: url('https://images.unsplash.com/photo-1613040809024-b4ef7ba99bc3?q=80&w=300'); }
+
+        .note {
+            background: rgba(197, 160, 89, 0.1);
+            border: 1px dashed var(--accent-gold);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 30px;
+            font-size: 0.9rem;
+            font-style: italic;
+            text-align: center;
+            color: var(--muted-text);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            color: var(--muted-text);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--accent-gold);
+            margin-top: 20px;
+        }
+
+        footer strong {
+            color: var(--main-blue);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="logo-placeholder">
+             <h1>Cello</h1>
+             <p>MEZE ★ BALIK</p>
+             <strong>Tahir'in Yeri</strong>
+        </div>
+        <p>Denizin Lezzeti, Muhabbetin Değeri</p>
+    </header>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Rakı Çeşitleri</h2>
+            <span class="section-icon">❄️</span>
+        </div>
+        <div id="raki-image" class="section-image"></div>
+        <div class="section-content">
+            <table class="raki-table">
+                <thead>
+                    <tr>
+                        <th>MARKA</th>
+                        <th>20cc</th>
+                        <th>35cc</th>
+                        <th>50cc</th>
+                        <th>70cc</th>
+                        <th>100cc</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="raki-brand">Efe Gold</td>
+                        <td class="raki-price">650</td>
+                        <td class="raki-price">1200</td>
+                        <td class="raki-price">1500</td>
+                        <td class="raki-price">2000</td>
+                        <td class="raki-price">2500</td>
+                    </tr>
+                    <tr>
+                        <td class="raki-brand">Sarı Zeybek</td>
+                        <td class="raki-price">750</td>
+                        <td class="raki-price">1300</td>
+                        <td class="raki-price">1750</td>
+                        <td class="raki-price">2250</td>
+                        <td class="raki-price">3000</td>
+                    </tr>
+                    <tr>
+                        <td class="raki-brand">Beylerbeyi<br>Göbek</td>
+                        <td class="raki-price">750</td>
+                        <td class="raki-price">1500</td>
+                        <td class="raki-price">1900</td>
+                        <td class="raki-price">2400</td>
+                        <td class="raki-price">3200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">İçecekler</h2>
+            <span class="section-icon">🥤</span>
+        </div>
+        <div class="section-content">
+            <div class="menu-item"><span class="item-name">Bira</span><span class="item-fiyat">200 TL</span></div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Kola, Fanta, Sprite, Şalgam</span>
+                </div>
+                <span class="item-fiyat">75 TL</span>
+            </div>
+            <div class="menu-item"><span class="item-name">Redbull</span><span class="item-fiyat">150 TL</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Mezeler & Salatalar</h2>
+            <span class="section-icon">🥗</span>
+        </div>
+        <div id="meze-image" class="section-image"></div>
+        <div class="section-content">
+            <div class="menu-item"><span class="item-name">Meze Çeşitleri</span><span class="item-fiyat">200 TL</span></div>
+            <div class="menu-item"><span class="item-name">Salata Çeşitleri</span><span class="item-fiyat">200 TL</span></div>
+            <div class="menu-item"><span class="item-name">Deniz Ürünleri Mezesi</span><span class="item-fiyat">450 TL</span></div>
+            <div class="menu-item"><span class="item-name">Ezine Peynir (Adet)</span><span class="item-fiyat">100 TL</span></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Ara Sıcaklar</h2>
+            <span class="section-icon">🔥</span>
+        </div>
+        <div class="section-content">
+            <div class="menu-item item-with-thumbnail">
+                <div id="karides-thumb" class="item-thumbnail"></div>
+                <div class="item-details"><span class="item-name">Karides</span></div>
+                <span class="item-fiyat">600 TL</span>
+            </div>
+            <div class="menu-item item-with-thumbnail">
+                <div id="kalamar-thumb" class="item-thumbnail"></div>
+                <div class="item-details"><span class="item-name">Kalamar</span></div>
+                <span class="item-fiyat">600 TL</span>
+            </div>
+            <div class="menu-item"><span class="item-name">Köri Patates</span><span class="item-fiyat">200 TL</span></div>
+            <div class="menu-item"><span class="item-name">Güveçte Mantar</span><span class="item-fiyat">200 TL</span></div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Börek Çeşitleri</span>
+                    <p class="item-description">Paçanga veya Sigara Böreği</p>
+                </div>
+                <span class="item-fiyat">150 TL</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Ana Yemekler</h2>
+            <span class="section-icon">🐟</span>
+        </div>
+        <div id="balik-image" class="section-image"></div>
+        <div class="section-content">
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Mezgit / Levrek / Çipura</span>
+                </div>
+                <span class="item-fiyat">600 TL</span>
+            </div>
+            <div class="menu-item"><span class="item-name">Sardalya</span><span class="item-fiyat">500 TL</span></div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Bonfile Saç Kavurma</span>
+                </div>
+                <span class="item-fiyat">700 TL</span>
+            </div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Lahos</span>
+                    <p class="item-description">Lütfen müsaitlik durumunu sorunuz.</p>
+                </div>
+                <span class="item-fiyat">Sorunuz</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header">
+            <h2 class="section-title">Meyve & Tatlı</h2>
+            <span class="section-icon">🍉</span>
+        </div>
+        <div class="section-content">
+            <div class="menu-item"><span class="item-name">Meyve Tabağı</span><span class="item-fiyat">250 TL</span></div>
+            <div class="menu-item">
+                <div class="item-details">
+                    <span class="item-name">Tatlı Çeşitleri</span>
+                    <p class="item-description">Kabak veya İrmik Tatlısı</p>
+                </div>
+                <span class="item-fiyat">250 TL</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        Not: Dışarıdan alkol getirildiği zaman servis ücretimiz kişi başı 200 TL'dir.
+    </div>
+
+    <footer>
+        ©️ 2024 - <strong>Cello Meze ★ Balık</strong> / Tahir'in Yeri <br> Afiyet Olsun
+    </footer>
+</div>
+
+</body>
+</html>
