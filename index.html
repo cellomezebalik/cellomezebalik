@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cello Meze ★ Balık Menü</title>
-    <!-- İkonlar için Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --dark-blue: #002b5c;
             --gold: #c5a059;
-            --soft-bg: #f0f4f8; 
+            /* Yeni Akdeniz Teması */
+            --soft-bg: #f4ede4; /* Kum beji/Toprak tonu - Sıcak hissettirir */
             --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-color: var(--soft-bg);
+            background-color: var(--soft-bg); /* Arka plan değişti */
             margin: 0;
             padding: 0;
             color: #333;
@@ -25,7 +25,7 @@
         .container {
             max-width: 500px;
             margin: 0 auto;
-            background: white;
+            background: #ffffff; /* Kartın kendisi beyaz kalıyor, kontrast sağlar */
             min-height: 100vh;
             padding-bottom: 40px;
             box-shadow: 0 0 30px rgba(0,0,0,0.05);
@@ -119,7 +119,7 @@
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: white;
+            background: #ffffff;
             z-index: 1000;
             overflow-y: auto;
         }
@@ -176,7 +176,6 @@
 
 <div class="container">
     <header>
-        <!-- Logo dosyası logo.png olarak güncellendi -->
         <img src="logo.png" alt="Cello Logo" class="logo-img">
     </header>
 
@@ -292,4 +291,3 @@
 
 </body>
 </html>
-```
