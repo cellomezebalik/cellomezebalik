@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cello Meze ★ Balık Menü</title>
+    <!-- İkonlar için Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --dark-blue: #002b5c;
             --gold: #c5a059;
-            /* Yeni Akdeniz Teması */
-            --soft-bg: #f4ede4; /* Kum beji/Toprak tonu - Sıcak hissettirir */
+            --soft-bg: #f4ede4; /* Tüm sayfanın ana rengi */
             --card-shadow: 0 10px 20px rgba(0,0,0,0.08);
         }
 
         body {
             font-family: 'Segoe UI', sans-serif;
-            background-color: var(--soft-bg); /* Arka plan değişti */
+            background-color: var(--soft-bg);
             margin: 0;
             padding: 0;
             color: #333;
@@ -25,17 +25,16 @@
         .container {
             max-width: 500px;
             margin: 0 auto;
-            background: #ffffff; /* Kartın kendisi beyaz kalıyor, kontrast sağlar */
+            background: transparent;
             min-height: 100vh;
             padding-bottom: 40px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.05);
         }
 
         header {
             text-align: center;
             padding: 25px 20px;
-            border-bottom: 3px solid var(--gold);
-            background: #ffffff;
+            border-bottom: 2px solid rgba(197, 160, 89, 0.3);
+            background: transparent;
         }
 
         .logo-img {
@@ -51,7 +50,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 15px;
             padding: 20px;
-            background-color: #ffffff;
+            background: transparent;
         }
 
         .cat-card {
@@ -59,7 +58,7 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--card-shadow);
-            border: 1px solid #f1f1f1;
+            border: 1px solid rgba(0,0,0,0.03);
             transition: all 0.3s ease;
             cursor: pointer;
         }
@@ -85,8 +84,7 @@
         .social-area {
             text-align: center;
             padding: 25px 20px;
-            background: #ffffff;
-            border-top: 1px solid #eee;
+            background: transparent;
         }
 
         .social-row {
@@ -272,7 +270,8 @@
             <div class="item"><span>Bonfile Saç Kavurma</span><span class="item-price">700 TL</span></div>`,
         'tatli-cat': `
             <div class="item"><span>Kabak Tatlısı</span><span class="item-price">250 TL</span></div>
-            <div class="item"><span>İrmik Tatlısı</span><span class="item-price">250 TL</span></div>`
+            <div class="item"><span>İrmik Tatlısı</span><span class="item-price">250 TL</span></div>
+            <div class="item"><span>Meyve Tabağı</span><span class="item-price">250 TL</span></div>`
     };
 
     function openMenu(id, title) {
