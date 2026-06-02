@@ -76,7 +76,7 @@
             border: 2px solid var(--dark-blue);
         }
 
-        /* Ana İçerik Konteyneri (İlk başta gizli, dil seçimine göre görünür) */
+        /* Ana İçerik Konteyneri */
         .container {
             max-width: 500px;
             margin: 0 auto;
@@ -212,25 +212,13 @@
         .raki-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin-top: 10px;}
         .raki-table th, .raki-table td { padding: 12px 2px; text-align: center; border-bottom: 1px solid #eee; }
         .raki-brand { text-align: left !important; font-weight: bold; color: var(--dark-blue); }
-        
-        .alkol-not {
-            background: #fff9db;
-            padding: 12px;
-            border-radius: 10px;
-            margin-top: 25px;
-            font-size: 13px;
-            color: #7d6608;
-            text-align: center;
-            border: 1px dashed #f1c40f;
-            line-height: 1.4;
-        }
     </style>
 </head>
 <body>
 
 <div id="language-selection" class="lang-overlay">
     <div class="lang-container">
-        <img src="logo.png" alt="Cello Logo" class="lang-logo">
+        <img src="logo.png" alt="Cello Logo" class="lang-logo" onerror="this.style.display='none';">
         <button class="lang-btn btn-tr" onclick="selectLanguage('tr')">TÜRKÇE</button>
         <button class="lang-btn btn-en" onclick="selectLanguage('en')">ENGLISH</button>
     </div>
@@ -238,32 +226,32 @@
 
 <div id="main-container" class="container">
     <header>
-        <img src="logo.png" alt="Cello Logo" class="logo-img">
+        <img src="logo.png" alt="Cello Logo" class="logo-img" onerror="this.removeAttribute('onerror');">
     </header>
 
     <div class="category-grid">
         <div class="cat-card" onclick="triggerMenuOpen('raki-cat')">
-            <img src="raki.JPG" class="cat-img">
+            <img src="raki.JPG" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=400';">
             <div id="title-raki-cat" class="cat-title">RAKI ÇEŞİTLERİ</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('icecek-cat')">
-            <img src="icecek.JPG" class="cat-img">
+            <img src="icecek.JPG" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400';">
             <div id="title-icecek-cat" class="cat-title">İÇECEKLER</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('meze-cat')">
-            <img src="meze.JPG" class="cat-img">
+            <img src="meze.JPG" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1541518763669-27fef04b14ea?q=80&w=400';">
             <div id="title-meze-cat" class="cat-title">MEZELER</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('salata-cat')">
-            <img src="salata.JPG" class="cat-img">
+            <img src="salata.JPG" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400';">
             <div id="title-salata-cat" class="cat-title">SALATALAR</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('arasicak-cat')">
-            <img src="arasicak.jpg" class="cat-img">
+            <img src="arasicak.jpg" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=400';">
             <div id="title-arasicak-cat" class="cat-title">ARA SICAKLAR</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('anayemek-cat')">
-            <img src="anayemek.JPG" class="cat-img">
+            <img src="anayemek.JPG" class="cat-img" onerror="this.src='https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=400';">
             <div id="title-anayemek-cat" class="cat-title">ANA YEMEKLER</div>
         </div>
         <div class="cat-card" onclick="triggerMenuOpen('tatli-cat')">
@@ -361,4 +349,97 @@
             'arasicak-cat': `
                 <div class="item"><span>Karides</span><span class="item-price">600 TL</span></div>
                 <div class="item"><span>Kalamar</span><span class="item-price">600 TL</span></div>
-                <div class="item"><span>Güveçte Mantar</span><span class="item-price">500 TL</span>
+                <div class="item"><span>Güveçte Mantar</span><span class="item-price">500 TL</span></div>
+                <div class="item"><span>Paçanga Böreği</span><span class="item-price">150 TL</span></div>
+                <div class="item"><span>Sigara Böreği</span><span class="item-price">150 TL</span></div>
+                <div class="item"><span>Köylü Patates</span><span class="item-price">250 TL</span></div>`,
+            'anayemek-cat': `
+                <div class="item"><span>Mezgit / Levrek / Çipura (Tüm çeşitler 400-450gr.)</span><span class="item-price">600 TL</span></div>
+                <div class="item"><span>Sardalya</span><span class="item-price">500 TL</span></div>
+                <div class="item"><span>Bonfile Saç Kavurma (180gr.) </span><span class="item-price">750 TL</span></div>`,
+            'tatli-cat': `
+                <div class="item"><span>Kabak Tatlısı</span><span class="item-price">250 TL</span></div>
+                <div class="item"><span>İrmik Tatlısı</span><span class="item-price">250 TL</span></div>
+                <div class="item"><span>Meyve Tabağı</span><span class="item-price">250 TL</span></div>`
+        },
+        'en': {
+            'raki-cat': `
+                <table class="raki-table">
+                    <tr><th>Brand</th><th>20cc</th><th>35cc</th><th>50cc</th><th>70cc</th><th>100cc</th></tr>
+                    <tr><td class="raki-brand">Efe Gold</td><td>650</td><td>1300</td><td>1500</td><td>2000</td><td>2500</td></tr>
+                    <tr><td class="raki-brand">Sarı Zeybek</td><td>750</td><td>1500</td><td>1750</td><td>2250</td><td>3000</td></tr>
+                    <tr><td class="raki-brand">Beylerbeyi Göbek</td><td>750</td><td>1500</td><td>1900</td><td>2400</td><td>3200</td></tr>
+                    <tr><td class="raki-brand">Adap Rakı</td><td>600</td><td>1000</td><td>-</td><td>1800</td><td>-</td></tr>
+                </table>`,
+            'icecek-cat': `
+                <div class="item"><span>Beer</span><span class="item-price">200 TL</span></div>
+                <div class="item"><span>Water, Mineral Water</span><span class="item-price">100 TL</span></div>
+                <div class="item"><span>Cola, Fanta, Sprite, Turnip Juice</span><span class="item-price">100 TL</span></div>
+                <div class="item"><span>Redbull</span><span class="item-price">150 TL</span></div>`,
+            'meze-cat': `
+                <div class="item"><span>Traditional Meze Varieties</span><span class="item-price">200 TL</span></div>
+                <div class="item"><span>Seafood Meze</span><span class="item-price">450 TL</span></div>
+                <div class="item"><span>Ezine Cheese (Per Piece)</span><span class="item-price">150 TL</span></div>`,
+            'salata-cat': `
+                <div class="item"><span>Seasonal Salad</span><span class="item-price">200 TL</span></div>
+                <div class="item"><span>Choban (Shepherd's) Salad</span><span class="item-price">250 TL</span></div>
+                <div class="item"><span>Arugula (Roca) Salad</span><span class="item-price">200 TL</span></div>`,
+            'arasicak-cat': `
+                <div class="item"><span>Shrimp</span><span class="item-price">600 TL</span></div>
+                <div class="item"><span>Calamari</span><span class="item-price">600 TL</span></div>
+                <div class="item"><span>Mushroom Casserole</span><span class="item-price">500 TL</span></div>
+                <div class="item"><span>Pacanga Pastry</span><span class="item-price">150 TL</span></div>
+                <div class="item"><span>Spring Rolls (Sigara Böreği)</span><span class="item-price">150 TL</span></div>
+                <div class="item"><span>Country Style Potatoes</span><span class="item-price">250 TL</span></div>`,
+            'anayemek-cat': `
+                <div class="item"><span>Whiting / Sea Bass / Sea Bream (All varieties 400-450gr.)</span><span class="item-price">600 TL</span></div>
+                <div class="item"><span>Sardines</span><span class="item-price">500 TL</span></div>
+                <div class="item"><span>Beef Tenderloin Sauté (Saç Kavurma 180gr.)</span><span class="item-price">750 TL</span></div>`,
+            'tatli-cat': `
+                <div class="item"><span>Pumpkin Dessert</span><span class="item-price">250 TL</span></div>
+                <div class="item"><span>Semolina Halva Dessert</span><span class="item-price">250 TL</span></div>
+                <div class="item"><span>Fruit Platter</span><span class="item-price">250 TL</span></div>`
+        }
+    };
+
+    function selectLanguage(lang) {
+        currentLang = lang;
+        
+        // Statik metinleri güncelle
+        document.getElementById('text-back-btn').innerText = translations[lang]['back-btn'];
+        document.getElementById('text-experience').innerText = translations[lang]['experience'];
+        document.getElementById('text-google').innerText = translations[lang]['google'];
+        document.getElementById('text-thanks').innerText = translations[lang]['thanks'];
+
+        // Kategori başlıklarını güncelle
+        for (const [key, value] of Object.entries(translations[lang]['categories'])) {
+            document.getElementById('title-' + key).innerText = value;
+        }
+
+        // Dil seçim ekranını gizle, ana menüyü göster
+        document.getElementById('language-selection').style.style.setProperty('display', 'none', 'important');
+        document.getElementById('language-selection').style.display = 'none';
+        document.getElementById('main-container').style.display = 'block';
+    }
+
+    function triggerMenuOpen(id) {
+        const title = translations[currentLang]['categories'][id];
+        openMenu(id, title);
+    }
+
+    function openMenu(id, title) {
+        document.getElementById('overlay-title').innerText = title;
+        document.getElementById('overlay-content').innerHTML = menus[currentLang][id];
+        document.getElementById('overlay').style.display = 'block';
+        window.scrollTo(0,0);
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        document.getElementById('overlay').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+</script>
+
+</body>
+</html>
